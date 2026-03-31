@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Cloning repository...'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Listing files...'
+                sh 'ls'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running Python file...'
+                sh 'python3 calculator.py'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deployment stage (dummy for now)'
+            }
+        }
+    }
+}
